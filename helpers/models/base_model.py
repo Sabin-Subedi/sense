@@ -6,7 +6,7 @@ from django.conf import settings
 
 
 class BaseModel(models.Model):
-    idx = GG_ShortUUIDField()
+    idx = GG_ShortUUIDField(unique=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     is_deleted = models.BooleanField(default=False)
